@@ -1,6 +1,7 @@
 package com.macro.mall;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.macro.mall.demo.MallDemoApplication;
 import com.macro.mall.model.PmsProduct;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = MallDemoApplication.class)
 public class MallDemoApplicationTests {
 	private Logger logger = LoggerFactory.getLogger(MallDemoApplicationTests.class);
 	@Test
@@ -27,5 +28,4 @@ public class MallDemoApplicationTests {
 		logger.info(mapper.writeValueAsString(product));
 		logger.error(mapper.writeValueAsString(product));
 	}
-
 }
